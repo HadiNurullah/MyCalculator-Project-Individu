@@ -14,6 +14,9 @@ body {
   color: #01353a;
   text-shadow: 1px 1px 1px white;
 }
+.title h1 {
+  animation: fadeDown 1s;
+}
 .container {
   width: 576px;
   height: 100vh;
@@ -30,6 +33,7 @@ body {
   border-radius: 10px;
   background-color: #ede2b8;
   box-shadow: 1px 1px 5px #01353a;
+  animation: zoomIn 1s;
 }
 .section-head {
   position: relative;
@@ -128,6 +132,7 @@ body {
   position: absolute;
   right: 0;
   bottom: 0;
+  animation: fadeUp 1s;
 }
 .gif img {
   width: 350px;
@@ -152,6 +157,15 @@ body {
   }
   .section-head .screen {
     width: 96.7%;
+  }
+  .section-head .screen h2 {
+    font-size: 30px;
+    margin-top: 10px;
+    margin-right: 22px;
+  }
+  .section-head .screen span {
+    margin-top: 5px;
+    font-size: 35px;
   }
   .box-btn .section-btn-1 button:first-child,
   .box-btn .section-btn-2 button:first-child,
@@ -187,5 +201,37 @@ body {
   }
   to {
     opacity: 0.5;
+  }
+}
+@keyframes fadeDown {
+  from {
+    margin-top: -50px;
+    opacity: 0;
+  }
+  to {
+  }
+}
+@keyframes zoomIn {
+  0% {
+    opacity: 0;
+    scale: 0;
+  }
+  50% {
+    opacity: 0.7;
+    scale: 1.2;
+  }
+  100% {
+  }
+}
+@keyframes fadeUp {
+  0% {
+    margin-bottom: -100px;
+    opacity: 0;
+  }
+  50% {
+    margin-top: -50px;
+    opacity: 0.5;
+  }
+  100% {
   }
 }
