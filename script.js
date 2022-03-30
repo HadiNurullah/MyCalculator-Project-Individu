@@ -1,13 +1,11 @@
 let tampil = document.querySelector('.tampil');
 let finalCalc = document.querySelector('.final');
 let $buttons = document.querySelectorAll('button');
-
 let opPressed = false;
 let valOne = [];
 let valTwo = [];
 let operator = [];
 let final = 0;
-
 [...$buttons].map((x) => {
   x.addEventListener('click', function (e) {
     switch (this.innerHTML) {
@@ -48,7 +46,7 @@ let final = 0;
         break;
       default:
         if (valOne.length > 11) {
-          alert('No more values beyond 8');
+          alert('No more values beyond 12');
         } else {
           valOne.push(this.innerText);
           tampil.textContent = valOne.join('');
@@ -66,7 +64,6 @@ let final = 0;
     }
   });
 });
-
 function clearDisplay() {
   tampil.textContent = '';
   finalCalc.textContent = '';
@@ -74,12 +71,10 @@ function clearDisplay() {
   valTwo = [];
   operator = [];
 }
-
 function removeNumber(e) {
   valOne.pop();
   tampil.textContent = valOne.join('');
 }
-
 function makeNegative() {
   if (valOne.length < 1) {
     return false;
@@ -90,7 +85,6 @@ function makeNegative() {
   }
   tampil.textContent = valOne.join('');
 }
-
 function makeCalculation() {
   if (valTwo.length > 0 && operator.length !== 0) {
     final = eval(valTwo + operator + valOne.join(''));
@@ -112,7 +106,6 @@ function makeCalculation() {
     valOne = [];
   }
 }
-
 function storeValue() {
   if (valOne.length == 0 && valTwo.length == 0) {
     return false;
